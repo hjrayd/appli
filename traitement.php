@@ -13,12 +13,16 @@
                 "name" => $name,
                 "price" => $price,
                 "qtt" => $qtt,
+                "nbProduit" => $nbProduit,
                 "total" => $price*$qtt
             ];
 
             $_SESSION['products'][] = $product;
+     
+             }
         }
-    }
+        
+    
 
     header("Location:index.php");
 

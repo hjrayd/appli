@@ -12,7 +12,7 @@
     <div class="container-fluid">
         <ul class="nav navbar-nav">
             <li class="active"><a  href="index.php">Commander</a></li> 
-            <li><a  href="recap.php">Récapitulatif</a></li>
+            <li class="active"><a  href="recap.php">Récapitulatif</a></li>
         </ul>
     </nav>
         <h1>Ajouter un produit</h1>
@@ -39,6 +39,12 @@
                 <input type="submit" name="submit" value="Ajouter le produit">
             </p>
         </form>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+
+<?php
+
+
+?>

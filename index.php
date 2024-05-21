@@ -7,7 +7,14 @@
         <title>Ajout produit</title>
     </head>
     <body>
-    
+        
+    <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <ul>
+            <li><a class="navbar-brand" href="index.php">Commander</a></li> 
+            <li><a class="navbar-brand" href="recap.php">Récapitulatif</a></li>
+        </ul>
+    </nav>
         <h1>Ajouter un produit</h1>
         <form action="traitement.php" method="post">
             <p>

@@ -10,6 +10,13 @@
     <title>Récapitulatif des produits</title>
 </head>
 <body>
+    <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <ul>
+            <li><a class="navbar-brand" href="index.php">Commander</a></li>
+            <li><a class="navbar-brand" href="recap.php">Récapitulatif</a></li>
+        </ul>
+    </nav>
     <?php 
         if(!isset($_SESSION['products']) || empty($_SESSION['products'])) {
             echo"<p>Aucun produit en session...</p>";

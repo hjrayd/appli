@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>Récapitulatif des produits</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
             echo"<p>Aucun produit en session...</p>";
         } 
         else{
-            echo"<table>",
+            echo"<table class='table'>",
                 "<thead>",
                     "<tr>",
                         "<th>#</th>",
@@ -30,10 +30,10 @@
             foreach($_SESSION['products'] as $index => $product) {
                 echo "<tr>",
                     "<td>".$index."</td>",
-                    "<td>".$products['name']."</td>",
-                    "<td>".number_format($products['price'], 2, ",", "&nbsp;")."&nbsp;€.</td>",
-                    "<td>".$products['qtt']."</td>",
-                    "<td>".number_format($products['total'], 2, ",", "&nbsp;")."&nbsp;€.</td>",
+                    "<td>".$product['name']."</td>",
+                    "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€.</td>",
+                    "<td>".$product['qtt']."</td>",
+                    "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€.</td>",
                 "</tr>";
                 $totalGeneral+= $product['total'];
             }
@@ -48,5 +48,6 @@
         }
         
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

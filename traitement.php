@@ -17,13 +17,13 @@
                 "total" => $price*$qtt
             ];
 
+            
             $_SESSION['products'][] = $product;
-     
-             }
+            $_SESSION['message'] = 'Les produits ont bien été ajouté à votre panier.';
+        } else {
+            $_SESSION['message'] = 'Les produits n/ont pas pu être ajouté à votre panier.';
         }
-        
-    
-
+  }
     header("Location:index.php");
-
+ 
     ?>

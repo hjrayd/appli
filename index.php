@@ -8,11 +8,11 @@
     </head>
     <body>
         
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <ul>
-            <li><a class="navbar-brand" href="index.php">Commander</a></li> 
-            <li><a class="navbar-brand" href="recap.php">Récapitulatif</a></li>
+        <ul class="nav navbar-nav">
+            <li class="active"><a  href="index.php">Commander</a></li> 
+            <li><a  href="recap.php">Récapitulatif</a></li>
         </ul>
     </nav>
         <h1>Ajouter un produit</h1>

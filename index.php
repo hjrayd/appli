@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,8 +19,12 @@
             <li class="active"><a  href="recap.php">Récapitulatif</a></li>
         </ul>
     </nav>
+
+
+       
+
         <h1>Ajouter un produit</h1>
-        <form action="traitement.php" method="post">
+        <form action="traitement.php?action=add" method="post">
             <p>
                 <label class="form-label" >
                     Nom du produit : 
@@ -39,15 +47,15 @@
                 <input type="submit" name="submit" value="Ajouter le produit">
             </p>
         </form>
+
+         <?php
+            if (isset($_SESSION["message"]))
+            {
+                echo $_SESSION["message"]; 
+                unset($_SESSION["message"]); 
+            }
+        ?>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+    </body> 
 </html>
-
- <?php
-
-if (isset($_SESSION["message"])){
-    echo $_SESSION["message"]; 
-    unset($_SESSION["message"]); 
-}
-?>

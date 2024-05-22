@@ -24,7 +24,7 @@
        
 
         <h1>Ajouter un produit</h1>
-        <form action="traitement.php?action=add" method="post">
+        <form action="traitement.php?action=add" method="post"  enctype= "multipart/form-data">
             <p>
                 <label class="form-label" >
                     Nom du produit : 
@@ -44,8 +44,12 @@
                 </label>
             </p>
             <p>
-                <input type="submit" name="submit" value="Ajouter le produit">
+            <p>
+                <label for="file">Fichier</label>
+                <input type="file" name="file">
+                <button type="submit">Enregistrer</button>   
             </p>
+            <input type="submit" name="submit" value="Ajouter le produit">
         </form>
 
          <?php

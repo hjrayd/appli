@@ -72,6 +72,35 @@
                 }
                 header("Location:recap.php");
                 break;
+
+            //ajouter une image
+            case "image"; 
+            if(isset($_FILES['file'])){
+                $tmpName = $_FILES['file']['tmp_name'];
+                $name = $_FILES['file']['name'];
+                $size = $_FILES['file']['size'];
+                $error = $_FILES['file']['error'];
+
+
+                $tabExtension = explode('.', $name);
+                $extension = strtolower(end($tabExtension));
+                //Tableau des extensions que l'on accepte 
+                $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+                $maxSize = 400000;
+
+                if(in_array($extension, $extensions) && $size <= $maxSize && $error==0) {
+
+                    $uniqueName = uniqid('', true);
+                    $file= $uniqueName.".".$extension;
+                    move_uploaded_file($tmpName, './upload/'.$file);
+                }
+                else {
+                    echo "Une erreur est survenue";
+                }
+                header("Location:index.php");
+                break;
+               
+            }
         }
             
     }

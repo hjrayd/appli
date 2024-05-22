@@ -43,10 +43,11 @@
                             "<td>".$product['name']."</td>",
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€.</td>",
                             "<td>"."<button class='btn btn-outline-danger' id ='down' type='submit' name='down' > <a class='link-offset-2 link-underline link-underline-opacity-0' href=traitement.php?action=down-qtt&id=$index>-</a> </button>".$product['qtt']."<button class='btn btn-outline-success' id='up' type='submit' name='up'> <a class='link-offset-2 link-underline link-underline-opacity-0' href=traitement.php?action=up-qtt&id=$index> + </a></button>"."</td>",
+                           
                             "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€.</td>",
                             "<td> <a class='link-offset-2 link-underline link-underline-opacity-0' href=traitement.php?action=delete&id=$index> <i class='fa-solid fa-trash'></i> </a> </td>",
                         "</tr>";
-                    $totalGeneral+= $product['total'];
+                    $totalGeneral += $product['total'];
                     $nbProduit += $product['qtt'];
                 }
                     echo "<tr>",
@@ -58,6 +59,10 @@
                         "<td colspan=4> Total produits : </td>",
                         "<td><strong>".number_format($nbProduit)."</strong></td>",
                         $nbProduit+= $product['qtt'],
+                    "</tr>",
+                    "<tr>",
+                        "<td colspan=4> Images : </td>",
+                         "<td>"."<img a href=traitement.php?action=image>"."</td>",
                     "</tr>",
               "</tbody>",
             "</table>";

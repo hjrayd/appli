@@ -67,7 +67,7 @@
                     $_SESSION['products'][$_GET['id']]['qtt']--; 
                     $_SESSION['products'][$_GET['id']]['total'] = $_SESSION['products'][$_GET['id']]['price']* $_SESSION['products'][$_GET['id']]['qtt'];
                 } else {
-                    unset($_SESSION['products']); 
+                    unset($_SESSION['products'][$_GET['id']]);
                 }
                 }
                 header("Location:recap.php");

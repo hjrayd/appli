@@ -1,6 +1,5 @@
 <?php 
     session_start();
-
     if(isset($_GET['action'])) {
         switch($_GET['action']) {
     
@@ -18,7 +17,7 @@
                         "price" => $price,
                         "qtt" => $qtt,
                         "nbProduit" => $nbProduit,
-                        "total" => $price*$qtt
+                        "total" => $price*$qtt,
                         ];
 
             
@@ -26,15 +25,17 @@
                 $_SESSION['message'] = "Les produits ont bien été ajouté à votre panier.";
                 
                     } else {
-                        $_SESSION['message'] ="Les produits n/ont pas pu être ajouté à votre panier.";
+                        $_SESSION['message'] ="Les produits n'ont pas pu être ajouté à votre panier.";
                         }
                     }
                         header("Location:index.php");
                         break;
 
             //supprimer un produit au choix
-            case "delete" : if (isset($_SESSION['products'][$product])) {
-                            unset($_SESSION['products'][$product]);
+                                                            //$product
+            case "delete" : if (isset($_SESSION['products'][$_GET['id']])) {
+                                                        //$product
+                            unset($_SESSION['products'][$_GET['id']]);
                             $_SESSION['message'] ="Le produit a bien été supprimé.";
                                 }
                                 header("Location:recap.php");
@@ -51,14 +52,28 @@
 
             //Augmenter la quantité d'un produit 
             case "up-qtt" :
-                if (isset($_SESSION['products'])) {
+                if (isset($_SESSION['products'][$_GET['id']]['qtt'])) {
+                    $_SESSION['products'][$_GET['id']]['qtt']++; 
+                    $_SESSION['products'][$_GET['id']]['total'] = $_SESSION['products'][$_GET['id']]['price']* $_SESSION['products'][$_GET['id']]['qtt'];
                 }
+                header("Location:recap.php");
+                break;
             
             //Diminuer la quantité d'un produit
             case "down-qtt" :
-                if (isset($_SESSION['products'])) {
+                if (isset($_SESSION['products'][$_GET['id']]['qtt'])) {
 
+                    if ($_SESSION['products'][$_GET['id']]['qtt']>1) {
+                    $_SESSION['products'][$_GET['id']]['qtt']--; 
+                    $_SESSION['products'][$_GET['id']]['total'] = $_SESSION['products'][$_GET['id']]['price']* $_SESSION['products'][$_GET['id']]['qtt'];
+                } else {
+                    unset($_SESSION['products']); 
                 }
+                }
+                header("Location:recap.php");
+                break;
+        }
+            
     }
- } 
+ 
    ?>

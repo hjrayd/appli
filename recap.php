@@ -13,8 +13,8 @@
     <nav class="navbar navbar-default">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li class="active"><a  href="index.php">Commander</a></li>
-            <li class="active"><a  href="recap.php">Récapitulatif</a></li>
+            <li class="active"><a class="link-offset-2 link-underline link-underline-opacity-0" href="index.php">Commander</a></li>
+            <li class="active"><a class="link-offset-2 link-underline link-underline-opacity-0" href="recap.php">Récapitulatif</a></li>
         </ul>
     </nav>
     <?php 
@@ -30,6 +30,7 @@
                         "<th>Prix</th>",
                         "<th>Quantité</th>",
                         "<th>Total</th>",
+                        "<th>Supprimer</th>",
                     "<tr>",
                 "</thead>",
                 "<tbody>";
@@ -40,8 +41,9 @@
                             "<td>".$index."</td>",
                             "<td>".$product['name']."</td>",
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€.</td>",
-                            "<td>".$product['qtt']."</td>",
+                            "<td>"."<a class='link-offset-2 link-underline link-underline-opacity-0' href=traitement.php?action=down-qtt&id=$index>-</a>".$product['qtt']."<a class='link-offset-2 link-underline link-underline-opacity-0' href=traitement.php?action=up-qtt&id=$index> + </a>"."</td>",
                             "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€.</td>",
+                            "<td> <a class='link-offset-2 link-underline link-underline-opacity-0' href=traitement.php?action=delete&id=$index> X </a> </td>",
                         "</tr>";
                     $totalGeneral+= $product['total'];
                     $nbProduit += $product['qtt'];
@@ -58,8 +60,14 @@
                     "</tr>",
               "</tbody>",
             "</table>";
+            echo "<button class='btn btn-danger' id='deleteAll' type='submit' name='clear'> <a class='link-offset-2 link-underline link-underline-opacity-0' href=traitement.php?action=clear> Supprimer tout le panier </a> </button>";
         }
         
+        if (isset($_SESSION["message"]))
+        {
+            echo $_SESSION["message"]; 
+            unset($_SESSION["message"]); 
+        }
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

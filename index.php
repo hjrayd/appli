@@ -46,8 +46,7 @@
             <p>
             <p>
                 <label for="file">Fichier</label>
-                <input type="file" name="file">
-                <button type="submit">Enregistrer</button>   
+                <input type="file" name="file">  
             </p>
             <input type="submit" name="submit" value="Ajouter le produit">
         </form>

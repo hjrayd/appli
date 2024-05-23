@@ -15,5 +15,5 @@ Then, i coded the cart part where all the products who has been ordered can be s
 
 
 
-![app shopping cart](https://github.com/hjrayd/appli/assets/164890959/1bf7ef45-af9a-48fa-b17c-d53f9f0bb9b0)
-![app form](https://github.com/hjrayd/appli/assets/164890959/4e1e67b2-856d-48a8-8451-bf1f8a49ef74)
+![app form](https://github.com/hjrayd/appli/assets/164890959/13c52c6a-e50b-4ca1-b1b7-fb71880a6262)
+![app shopping cart](https://github.com/hjrayd/appli/assets/164890959/07190d30-ab33-4a55-8031-eb08ece156de)

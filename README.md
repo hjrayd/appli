@@ -1,4 +1,4 @@
-##What is it about ? 
+## What is it about ?
 
 It's an exercise i did during my training at Elan Formation. 
 I had to code a form with differents text fields wich can be used to order products. 
